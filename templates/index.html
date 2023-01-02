@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="static/css/style.css" rel="stylesheet" />
+    <script src="static/js/script.js"></script>
+    <title>ASCII Art</title>
+  </head>
+  <body>
+    <form action="/ascii-art" method="POST">
+    <div class="boxes">
+      <ul class="single-box">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+      </ul>
+    </div>
+    <div class="ascii_gen">
+      <div class="output">
+        <h2 class="bigtitle">Awesome ASCII Art</h2>
+        <pre id="res" name="res">{{.Art}}</pre>
+        <br>
+        <div class="buttons">
+          <button class="button1" name="generate" value="Generate ASCII Art">Generate ASCII Art</button>
+          {{ if .Word }}
+          <button class="button2" name="download" value="Download">Download</button>
+          {{ end }}
+          <!-- <a href="http://localhost:8080"><button class="button" action="/" type="button" id="reset">Reset</button></a> -->
+      </div>
+      </div>
+
+      <div class="input" id="block1">
+        <h2 class = "title" id="block1h">Type Text</h2>
+        <textarea id="body" name="body" placeholder="Write something here..." required>{{.Word}}</textarea>
+      </div>
+      <div class="banners" id="block2">
+        <h2 class = "title" id="block2h">Select Banner</h2>
+      <div class="ocd">
+        <div>
+          <input type="radio" id="standard" name="banner" value="standard" checked>
+          <label for="standard">Standard</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="shadow" name="banner" value="shadow">
+          <label for="shadow">Shadow</label>
+        </div>
+    
+        <div>
+          <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+          <label for="thinkertoy">Thinkertoy</label>
+        </div>
+      </div>
+      </div>
+    </div>
+    </form>
+    <footer>@ okuu & jjelisav</footer>
+  </body>
+</html>
