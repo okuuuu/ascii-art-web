@@ -1,8 +1,11 @@
 <p style='text-align: justify;'>
 
 ## ASCII Art Web
+
+| Column 1 | Column 2 |
 | --- | --- |
 | ![Ascii Art Web](aaw0.png) | ![Download button](aaw1.png) |
+
 
 ### Description
 
