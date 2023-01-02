@@ -53,7 +53,7 @@ You can perform a hard refresh of the localhost web page in case some styles are
 
 ### Stylize
 
-Now, you can drag text-input and banner-selection blocks by holding your left mouse button over the block titles. CSS-flexbox approach has been used when writing initial css which means the design should be responsive.
+Now you can drag text-input and banner-selection blocks by holding your left mouse button over the block titles. CSS-flexbox approach has been used when writing initial css which means the design should be responsive.
 
 ### Export File
 
@@ -64,7 +64,7 @@ Now, you can drag text-input and banner-selection blocks by holding your left mo
 ### Dockerize
 
 Check that you have Docker Desktop installed to your PC and WSL2 engine is enabled in the settings.
-To build a docker image from the application, run
+To build a docker image from the application run
 ```
 bash d-start.sh
 ```

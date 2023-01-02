@@ -44,6 +44,7 @@ func GenerateHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		entity = Ascii{Word: word, Art: res.AsciiArt(word, banner), Banner: banner}
+		http.Redirect(w, r, "/", http.StatusFound)
 	}
 
 	if r.FormValue("download") != "" {
@@ -53,8 +54,6 @@ func GenerateHandler(w http.ResponseWriter, r *http.Request) {
 		w.Header().Add("Content-Length", strconv.Itoa(len(entity.Art)))
 		io.Copy(w, source) //w is the destination
 	}
-
-	http.Redirect(w, r, "/", http.StatusFound)
 }
 
 var validPath = regexp.MustCompile("^/(ascii-art|$)")

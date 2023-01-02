@@ -7,9 +7,11 @@ then
     echo -e '\nRunning image inside the container...'
     docker run -p 8080:8080 -d --name ascii-art-web-container ascii-art-web
     docker ps -a
-    echo -e '\nYou can stop and remove all running containers and perform a cleanup by running d-end.sh script.'
+    echo -e '\nStarting server at port 8080...'
+    echo -e '\033[0;34mhttp://localhost:8080\033[0m'
+    echo You can stop and remove all running containers and perform a cleanup by running d-end.sh script.
     echo -e '\nGetting into container... Type ls -l to see the contents and exit to quit.'
-    docker exec -it ascii-art-web-container /bin/bash
+    bash -c 'docker exec -it ascii-art-web-container /bin/bash'
 else
     echo Image building failed.
     exit 1
