@@ -48,9 +48,9 @@ func GenerateHandler(w http.ResponseWriter, r *http.Request) {
 
 	if r.FormValue("download") != "" {
 		source := strings.NewReader(entity.Art) //defining source
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		w.Header().Set("Content-Disposition", "attachment; filename=file.txt")
-		w.Header().Set("Content-Length", strconv.Itoa(len(entity.Art)))
+		w.Header().Add("Content-Type", "text/html; charset=utf-8")
+		w.Header().Add("Content-Disposition", "attachment; filename=file.txt")
+		w.Header().Add("Content-Length", strconv.Itoa(len(entity.Art)))
 		io.Copy(w, source) //w is the destination
 	}
 

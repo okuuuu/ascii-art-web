@@ -15,9 +15,11 @@ The current project includes following subprojects:
 -   [x] dockerize
 -   [x] exportfile
 
-Folder <code>res</code> contains several functions, files and structures required for the main code.
+All required files for the application are located inside <code>app</code> folder.
 
-Folder <code>templates</code> contains html and css files for the server.
+Folder <code>res</code> contains functions responsible for displaying ASCII art. Folder <code>server</code> contains functions responsible for running a server.
+
+Folders <code>templates</code> and <code>static</code> contain HTML, CSS and JavaScript files for the server and all available ASCII art banners are stored in <code>banners</code> folder.
 
 ### Allowed Packages
 
@@ -27,10 +29,11 @@ Folder <code>templates</code> contains html and css files for the server.
 
 - Here you can see [audit details](https://github.com/01-edu/public/tree/master/subjects/ascii-art-web/audit).
 
-### Usage
+### Usage without docker
 
 - To run the code type in your terminal:
 ```
+cd app
 go run main.go
 ```
 - Open your web browser and search http://localhost:8080
@@ -40,7 +43,7 @@ go run main.go
 Ctrl + C
 ```
 
-Text area on the left side shows the generated ASCII art output, while the text area on the right is for user input. Desired banner style can be chosen by selecting a corresponding radio button.
+The ASCII art output field appears after the first art generation, the text area is used for user input. Desired banner style can be chosen by selecting a corresponding radio button.
 
 To generate ASCII art press the <code>Generate ASCII Art</code> button with the text typed and the banner selected.
 
@@ -55,8 +58,24 @@ Now, you can drag text-input and banner-selection blocks by holding your left mo
 ### Export File
 
 - Type in your text and select the banner.
-- Press <code>Download</code> button to download the file.txt with you ASCII artwork.
-- Press <code>Generate ASCII Art</code> and compare the results.
+- Press <code>Generate ASCII Art</code> to see the ASCII art resurt.
+- Press <code>Download</code> button to download the file.txt with your last generated ASCII artwork.
+
+### Dockerize
+
+Check that you have Docker Desktop installed to your PC and WSL2 engine is enabled in the settings.
+To build a docker image from the application, run
+```
+bash d-start.sh
+```
+This will create a new docker image with settings provided inside the Dockerfile and start a new container based on that image. To stop and remove all the containers run
+```
+bash d-end.sh
+```
+You can also remove the image by running the following command
+```
+docker rmi ascii-art-web
+```
 
 ### Group Members
 

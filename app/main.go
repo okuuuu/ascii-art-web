@@ -12,8 +12,7 @@ func main() {
 
 	log.Print("Starting server at port 8080...\n")
 
-	http.Handle("/static/css/", http.StripPrefix("/static/css/", http.FileServer(http.Dir("static/css"))))
-	http.Handle("/static/js/", http.StripPrefix("/static/js/", http.FileServer(http.Dir("static/js"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 	log.Print("http://localhost:8080")
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
